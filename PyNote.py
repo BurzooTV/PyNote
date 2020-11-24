@@ -52,6 +52,10 @@ custom_lexer_style = style_from_pygments_dict({
 def _(event) -> None: event.app.exit(result=event.app.current_buffer.text)
 
 
+@bindings.add('tab')
+def _(event) -> str: event.current_buffer.insert_text('    ')
+    
+    
 @bindings.add('c-o')
 def _(event) -> str: event.current_buffer.insert_text(xpycode.strip())
 
